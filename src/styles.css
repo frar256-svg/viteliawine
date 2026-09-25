@@ -90,6 +90,9 @@
   --coral: oklch(0.68 0.13 35);
   --forest-soft: oklch(0.37 0.055 154);
   --paper: oklch(0.975 0.014 84);
+  --leather-hazelnut: oklch(0.5 0.1 52);
+  --leather-walnut: oklch(0.34 0.07 42);
+  --leather-onyx: oklch(0.25 0.01 75);
   --shadow-button: 0 10px 24px -14px color-mix(in oklab, var(--primary) 55%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -167,6 +170,9 @@
   --color-coral: var(--coral);
   --color-forest-soft: var(--forest-soft);
   --color-paper: var(--paper);
+  --color-leather-hazelnut: var(--leather-hazelnut);
+  --color-leather-walnut: var(--leather-walnut);
+  --color-leather-onyx: var(--leather-onyx);
 }
 
 @media (prefers-reduced-motion: reduce) {

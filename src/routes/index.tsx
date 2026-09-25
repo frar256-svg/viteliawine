@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowDown, Check, ChevronLeft, ChevronRight, MapPin, Minus, PackageCheck, Plus, ShieldCheck, ShoppingBag, Sparkles, Truck, X } from "lucide-react";
+import { ArrowDown, Check, ChevronRight, MapPin, Minus, PackageCheck, Plus, ShieldCheck, ShoppingBag, Sparkles, Truck, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 });
 
 const variants = [
-  { id: "hazelnut", name: "Clásico Avellana", short: "Avellana", swatch: "bg-[#9a5c37]", image: "sepia-[.15] saturate-[.9]" },
-  { id: "walnut", name: "Vintage Nogal", short: "Nogal", swatch: "bg-[#5d3528]", image: "sepia-[.35] saturate-[.75] brightness-[.82]" },
-  { id: "onyx", name: "Minimalista Onyx", short: "Onyx", swatch: "bg-[#252421]", image: "grayscale brightness-[.58] contrast-[1.25]" },
+  { id: "hazelnut", name: "Clásico Avellana", short: "Avellana", swatch: "bg-leather-hazelnut", image: "sepia-[.15] saturate-[.9]" },
+  { id: "walnut", name: "Vintage Nogal", short: "Nogal", swatch: "bg-leather-walnut", image: "sepia-[.35] saturate-[.75] brightness-[.82]" },
+  { id: "onyx", name: "Minimalista Onyx", short: "Onyx", swatch: "bg-leather-onyx", image: "grayscale brightness-[.58] contrast-[1.25]" },
 ] as const;
 
 type Variant = (typeof variants)[number];
