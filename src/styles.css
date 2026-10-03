@@ -65,21 +65,21 @@
 
 :root {
   --radius: 0.25rem;
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Manrope", Arial, sans-serif;
-  --background: oklch(0.965 0.014 85);
-  --foreground: oklch(0.235 0.035 155);
+  --font-display: "Libre Baskerville", Georgia, serif;
+  --font-sans: "IBM Plex Sans", Arial, sans-serif;
+  --background: oklch(0.956 0.012 76);
+  --foreground: oklch(0.235 0.03 52);
   --card: oklch(0.99 0.007 84);
   --card-foreground: oklch(0.235 0.035 155);
   --popover: oklch(0.99 0.007 84);
   --popover-foreground: oklch(0.235 0.035 155);
-  --primary: oklch(0.31 0.065 155);
+  --primary: oklch(0.31 0.062 157);
   --primary-foreground: oklch(0.97 0.012 84);
   --secondary: oklch(0.78 0.07 77);
   --secondary-foreground: oklch(0.235 0.035 155);
   --muted: oklch(0.925 0.016 81);
   --muted-foreground: oklch(0.49 0.028 82);
-  --accent: oklch(0.68 0.13 35);
+  --accent: oklch(0.46 0.105 25);
   --accent-foreground: oklch(0.99 0.007 84);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
@@ -87,12 +87,14 @@
   --input: oklch(0.82 0.032 78);
   --ring: oklch(0.61 0.082 75);
   --gold: oklch(0.61 0.082 75);
-  --coral: oklch(0.68 0.13 35);
+  --coral: oklch(0.46 0.105 25);
+  --wine: oklch(0.39 0.105 25);
+  --whatsapp: oklch(0.69 0.18 145);
   --forest-soft: oklch(0.37 0.055 154);
   --paper: oklch(0.975 0.014 84);
-  --leather-hazelnut: oklch(0.5 0.1 52);
-  --leather-walnut: oklch(0.34 0.07 42);
-  --leather-onyx: oklch(0.25 0.01 75);
+  --leather-distressed: oklch(0.48 0.085 52);
+  --leather-camel: oklch(0.67 0.105 65);
+  --leather-espresso: oklch(0.29 0.045 45);
   --shadow-button: 0 10px 24px -14px color-mix(in oklab, var(--primary) 55%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -168,11 +170,13 @@
 @theme inline {
   --color-gold: var(--gold);
   --color-coral: var(--coral);
+  --color-wine: var(--wine);
+  --color-whatsapp: var(--whatsapp);
   --color-forest-soft: var(--forest-soft);
   --color-paper: var(--paper);
-  --color-leather-hazelnut: var(--leather-hazelnut);
-  --color-leather-walnut: var(--leather-walnut);
-  --color-leather-onyx: var(--leather-onyx);
+  --color-leather-distressed: var(--leather-distressed);
+  --color-leather-camel: var(--leather-camel);
+  --color-leather-espresso: var(--leather-espresso);
 }
 
 @media (prefers-reduced-motion: reduce) {

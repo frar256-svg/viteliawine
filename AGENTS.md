@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the storefront as a single public route with browser-session cart state; purchasing completes through WhatsApp because no payment backend is connected.
