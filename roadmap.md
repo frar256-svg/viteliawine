@@ -5,4 +5,4 @@
 - [x] Implementar variantes, cantidad y carrito
 - [x] Validar móvil, escritorio y estado de compilación
 - [x] Incorporar fotografías finales, nuevos acabados y contacto directo por WhatsApp
-- [ ] Validar el rediseño en móvil y escritorio
+- [x] Validar el rediseño en móvil y escritorio
