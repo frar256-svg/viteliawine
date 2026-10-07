@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep the storefront as a single public route with browser-session cart state; purchasing completes through WhatsApp because no payment backend is connected.
+- Keep ordered catalog photography in a dedicated gallery module and separate material, craft, occasion, and gifting sections so image roles never mix.
