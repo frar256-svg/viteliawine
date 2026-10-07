@@ -9,4 +9,5 @@
 - [ ] Dejar únicamente Distressed Brown y ordenar las siete vistas del producto
 - [ ] Incorporar el póster como cierre editorial y separar las fotografías de calidad y artesanía
 - [ ] Incorporar ocasiones con contexto propio y regalos en una sección separada
+- [ ] Añadir una sección artesanal con la fotografía de taller después de materiales
 - [ ] Validar fotografías, galería y carrito
