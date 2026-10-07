@@ -8,4 +8,5 @@
 - [x] Validar el rediseño en móvil y escritorio
 - [ ] Dejar únicamente Distressed Brown y ordenar las siete vistas del producto
 - [ ] Incorporar el póster como cierre editorial y separar las fotografías de calidad y artesanía
+- [ ] Incorporar ocasiones con contexto propio y regalos en una sección separada
 - [ ] Validar fotografías, galería y carrito
