@@ -92,6 +92,7 @@
   --whatsapp: oklch(0.69 0.18 145);
   --forest-soft: oklch(0.37 0.055 154);
   --paper: oklch(0.975 0.014 84);
+  --catalog: oklch(1 0 0);
   --leather-distressed: oklch(0.48 0.085 52);
   --leather-camel: oklch(0.67 0.105 65);
   --leather-espresso: oklch(0.29 0.045 45);
@@ -174,6 +175,7 @@
   --color-whatsapp: var(--whatsapp);
   --color-forest-soft: var(--forest-soft);
   --color-paper: var(--paper);
+  --color-catalog: var(--catalog);
   --color-leather-distressed: var(--leather-distressed);
   --color-leather-camel: var(--leather-camel);
   --color-leather-espresso: var(--leather-espresso);
