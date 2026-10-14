@@ -4,7 +4,6 @@ import left from "@/assets/3_cuartos_izquierda.jpg.asset.json";
 import backAngle from "@/assets/vista_trasera_3_cuartos.jpg.asset.json";
 import back from "@/assets/vista_trasera.jpg.asset.json";
 import top from "@/assets/vista_superior.jpg.asset.json";
-import base from "@/assets/acostada.jpg.asset.json";
 
 export const variants = [
   { id: "distressed", name: "Distressed Brown", note: "Original · cálido y rústico", swatch: "bg-leather-distressed" },
@@ -17,5 +16,4 @@ export const productViews = [
   { id: "back-angle", label: "3/4 espalda", src: backAngle.url },
   { id: "back", label: "Espalda", src: back.url },
   { id: "top", label: "Superior", src: top.url },
-  { id: "base", label: "Acostada", src: base.url },
 ] as const;
