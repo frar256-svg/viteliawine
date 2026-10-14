@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Vitelia | Portabotellas de piel artesanal" },
       { name: "description", content: "Portabotellas Vitelia de piel genuina en acabado Distressed Brown. Compra o cotiza por WhatsApp; enviamos desde Querétaro a todo México." },
-      { property: "og:title", content: "Vitelia | Leather Wine Carriers" },
-      { property: "og:description", content: "One product, many stories. Portabotellas de piel hechos para llevar grandes momentos." },
+      { property: "og:title", content: "Vitelia | Portabotellas de piel artesanal" },
+      { property: "og:description", content: "Una pieza, muchas historias. Portabotellas de piel hechos para llevar grandes momentos." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -91,9 +91,9 @@ function Index() {
         <img src={productAsset.url} alt="Portabotellas Vitelia Distressed Brown, vista frontal" className="mx-auto h-[350px] w-full object-contain lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[52%]" fetchPriority="high" />
         <div className="relative mx-auto max-w-7xl px-5 pb-12 sm:px-8 lg:flex lg:min-h-[620px] lg:items-center lg:py-16">
           <div className="max-w-lg lg:max-w-[48%]">
-            <p className="text-[10px] font-semibold uppercase text-gold">Leather wine carriers · Querétaro</p>
+            <p className="text-[10px] font-semibold uppercase text-gold">Portabotellas de piel · Querétaro</p>
             <h1 className="mt-5 text-5xl font-bold leading-tight text-primary sm:text-7xl">Vitelia</h1>
-            <p className="mt-4 font-display text-2xl italic text-wine sm:text-3xl">One product, many stories.</p>
+            <p className="mt-4 font-display text-2xl italic text-wine sm:text-3xl">Una pieza, muchas historias.</p>
             <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground">Piel con carácter para acompañar una botella especial. Una pieza artesanal que convierte cada brindis en un regalo inolvidable.</p>
             <div className="mt-8 flex flex-col gap-3 sm:items-start">
               <Button asChild variant="luxury" size="xl"><a href={whatsappUrl("Hola Vitelia, quiero comprar un portabotellas Distressed Brown.")} target="_blank" rel="noreferrer">Comprar por WhatsApp <ChevronRight /></a></Button>
@@ -123,7 +123,7 @@ function Index() {
 
       <footer className="bg-primary text-primary-foreground"><div className="mx-auto max-w-7xl px-5 py-14 sm:px-8"><div className="grid gap-10 border-b border-primary-foreground/20 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]"><div><BrandMark inverse /><p className="mt-5 max-w-sm text-sm leading-6 text-primary-foreground/65">Diseño en piel para las historias que empiezan alrededor de una botella.</p></div><div><p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-gold">Explora</p><div className="mt-5 flex flex-col gap-3 text-sm"><a href="#producto">Producto</a><a href="#materiales">Materiales</a><a href="#ocasiones">Ocasiones</a><a href="#historia">Nuestra historia</a></div></div><div><p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-gold">Información</p><div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/75"><span>Envíos a todo México</span><span>Aviso de privacidad</span><span>Términos y condiciones</span></div></div></div><div className="flex flex-col gap-2 pt-6 text-[10px] uppercase tracking-[0.13em] text-primary-foreground/50 sm:flex-row sm:justify-between"><span>© 2026 Vitelia</span><span>Querétaro, México</span></div></div></footer>
 
-      <Button asChild variant="luxury" size="icon" className="fixed bottom-5 right-5 z-40 h-14 w-14 rounded-full bg-whatsapp text-primary-foreground shadow-xl hover:bg-whatsapp/90" aria-label="Hablar con Vitelia por WhatsApp"><a href={whatsappUrl("Hola Vitelia, quisiera información sobre sus portabotellas de piel.")} target="_blank" rel="noreferrer"><span className="text-xl font-bold">W</span></a></Button>
+      <Button asChild variant="luxury" size="icon" className="fixed bottom-5 right-5 z-40 h-14 w-14 rounded-full bg-whatsapp text-primary-foreground shadow-xl hover:bg-whatsapp/90" aria-label="Hablar con Vitelia por WhatsApp"><a href={whatsappUrl("Hola Vitelia, me interesa conocer más sobre los portabotellas VITELIA.")} target="_blank" rel="noreferrer"><span className="text-xl font-bold">W</span></a></Button>
     </main>
   );
 }

@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vitelia | Leather Wine Carriers" },
+      { title: "Vitelia | Portabotellas de piel artesanal" },
       { name: "description", content: "Portabotellas de piel artesanal, diseñado en Querétaro para acompañar las historias que vale la pena compartir." },
       { name: "author", content: "Vitelia" },
       { property: "og:type", content: "website" },
