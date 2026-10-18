@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Retirar anuncios de pago y traducir mensajes pendientes al español
+- [x] Comprobar cotizaciones por WhatsApp y conservar galería, carrito y diseño en todos los tamaños
+
 - [x] Definir identidad visual Vitelia y navegación
 - [x] Construir portada, producto, historia, beneficios y pagos
 - [x] Implementar variantes, cantidad y carrito
