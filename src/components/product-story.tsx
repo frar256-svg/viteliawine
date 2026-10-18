@@ -13,7 +13,7 @@ import restaurant from "@/assets/restaurante.jpg.asset.json";
 import terrace from "@/assets/sunset.jpg.asset.json";
 import gift from "@/assets/regalo.jpg.asset.json";
 import giftSecond from "@/assets/regalo_2.jpg.asset.json";
-import poster from "@/assets/poster.jpg.asset.json";
+import poster from "@/assets/poster-es.jpg";
 
 const details = [
   { asset: leather, title: "La piel", text: "Una textura con carácter propio." },
@@ -36,6 +36,6 @@ export function ProductStory({ contactUrl }: { contactUrl: string }) {
 
     <section id="regalos" className="bg-paper"><div className="mx-auto max-w-7xl px-5 py-20 sm:px-8"><div className="mb-12 max-w-xl"><p className="text-xs font-semibold uppercase text-wine">El arte de regalar</p><h2 className="mt-4 text-4xl leading-tight sm:text-5xl">Un regalo para recordar.</h2><p className="mt-5 text-sm leading-7 text-muted-foreground">Para quien aprecia un buen vino y los objetos que cuentan una historia. Consulta las opciones de presentación al confirmar tu pedido.</p></div><div className="grid gap-8 sm:grid-cols-2"><img src={gift.url} alt="Vitelia junto a una presentación de regalo" loading="lazy" className="aspect-[3/4] w-full object-contain"/><img src={giftSecond.url} alt="Portabotellas Vitelia y caja de regalo" loading="lazy" className="aspect-[3/4] w-full object-contain"/></div></div></section>
 
-    <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-20"><img src={poster.url} alt="VITELIA — Carry wine beautifully. Portabotellas Distressed Brown" loading="lazy" className="aspect-[3/4] w-full object-contain"/><div><p className="text-xs font-semibold uppercase text-wine">Tu próxima historia</p><h2 className="mt-5 text-4xl leading-tight sm:text-5xl">Portabotellas Vitelia</h2><p className="mt-6 text-sm leading-7 text-muted-foreground">Distressed Brown. Una pieza con carácter para una botella especial.</p><Button asChild variant="luxury" size="xl" className="mt-8"><a href={contactUrl} target="_blank" rel="noreferrer">Comprar o cotizar por WhatsApp</a></Button></div></section>
+    <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-20"><img src={poster} alt="VITELIA — Lleva tu vino con estilo. Portabotellas Distressed Brown" loading="lazy" className="aspect-[3/4] w-full object-contain"/><div><p className="text-xs font-semibold uppercase text-wine">Tu próxima historia</p><h2 className="mt-5 text-4xl leading-tight sm:text-5xl">Portabotellas Vitelia</h2><p className="mt-6 text-sm leading-7 text-muted-foreground">Distressed Brown. Una pieza con carácter para una botella especial.</p><Button asChild variant="luxury" size="xl" className="mt-8"><a href={contactUrl} target="_blank" rel="noreferrer">Comprar o cotizar por WhatsApp</a></Button></div></section>
   </>;
 }
