@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Quitar el precio de $200 y dejar solo la cotización por WhatsApp
+
 - [x] Retirar anuncios de pago y traducir mensajes pendientes al español
 - [x] Comprobar cotizaciones por WhatsApp y conservar galería, carrito y diseño en todos los tamaños
 
