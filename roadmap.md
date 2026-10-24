@@ -1,5 +1,10 @@
 # Roadmap
 
+- [ ] Presentar los cuatro modelos de los documentos como «Nuestros productos», con tarjetas y selección propia.
+- [ ] Incorporar colores reales por modelo; pendiente de confirmar distribución y nombres de los cuatro colores.
+- [ ] Revisar materiales e historia sin publicar datos no confirmados y conservar fotografías y funciones válidas.
+- [ ] Validar selección de modelos, carrito y cotización por WhatsApp en teléfono, tableta y computadora.
+
 - [x] Quitar el precio de $200 y dejar solo la cotización por WhatsApp
 
 - [x] Retirar anuncios de pago y traducir mensajes pendientes al español
