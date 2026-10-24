@@ -1,23 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Check, ChevronRight, Minus, Plus, ShieldCheck, ShoppingBag, X } from "lucide-react";
+import { ChevronRight, Minus, Plus, ShoppingBag, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import logoAsset from "@/assets/vitelia-logo-original.jpg.asset.json";
 import productAsset from "@/assets/hero_2.jpg.asset.json";
-import { variants } from "@/lib/catalog";
-import { cartQuoteMessage, generalQuoteMessage, quoteMessage, whatsappUrl } from "@/lib/quote";
+import { addSelection, selectionName, type CollectionCartLine } from "@/lib/collection";
+import { ProductCollection } from "@/components/product-collection";
+import { cartQuoteMessage, generalQuoteMessage, whatsappUrl } from "@/lib/quote";
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductStory } from "@/components/product-story";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vitelia | Portabotellas de piel artesanal" },
-      { name: "description", content: "Portabotellas Vitelia de piel genuina en acabado Distressed Brown. Cotiza tu pieza por WhatsApp; enviamos desde Querétaro a todo México." },
-      { property: "og:title", content: "Vitelia | Portabotellas de piel artesanal" },
-      { property: "og:description", content: "Una pieza, muchas historias. Portabotellas de piel hechos para llevar grandes momentos." },
+      { title: "Vitelia | Colección de bolsas portabotellas de cuero" },
+      { name: "description", content: "Descubre los cuatro modelos de bolsas portabotellas Vitelia: individual, doble, para cuatro botellas y para destilados. Cotiza por WhatsApp." },
+      { property: "og:title", content: "Vitelia | Colección de bolsas portabotellas de cuero" },
+      { property: "og:description", content: "Bolsas portabotellas de cuero para vino y destilados. Conoce la colección Vitelia y solicita tu cotización por WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -25,8 +26,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Variant = (typeof variants)[number];
-type CartLine = { variant: Variant; quantity: number };
+
 
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return (
@@ -38,25 +38,16 @@ function BrandMark({ inverse = false }: { inverse?: boolean }) {
 }
 
 function Index() {
-  const selected = variants[0];
-  const [quantity, setQuantity] = useState(1);
-  const [cart, setCart] = useState<CartLine[]>([]);
+  const [cart, setCart] = useState<CollectionCartLine[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const cartCount = cart.reduce((sum, line) => sum + line.quantity, 0);
-  const purchaseMessage = quoteMessage(quantity, selected.name);
 
-  function addToCart(open = false) {
-    setCart((current) => {
-      const found = current.find((line) => line.variant.id === selected.id);
-      return found
-        ? current.map((line) => line.variant.id === selected.id ? { ...line, quantity: line.quantity + quantity } : line)
-        : [...current, { variant: selected, quantity }];
-    });
-    if (open) setCartOpen(true);
+  function addToCart(line: CollectionCartLine) {
+    setCart((current) => addSelection(current, line));
   }
 
-  function changeLine(id: Variant["id"], amount: number) {
-    setCart((current) => current.map((line) => line.variant.id === id ? { ...line, quantity: line.quantity + amount } : line).filter((line) => line.quantity > 0));
+  function changeLine(id: string, amount: number) {
+    setCart((current) => current.map((line) => line.id === id ? { ...line, quantity: line.quantity + amount } : line).filter((line) => line.quantity > 0));
   }
 
   return (
@@ -69,7 +60,7 @@ function Index() {
         <div className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto] items-center gap-6 px-5 sm:px-8 lg:grid-cols-[1fr_auto_1fr]">
           <BrandMark />
           <nav className="hidden items-center gap-8 text-[11px] font-semibold uppercase tracking-[0.14em] lg:flex" aria-label="Navegación principal">
-            <a href="#producto" className="hover:text-wine">Producto</a><a href="#materiales" className="hover:text-wine">Materiales</a><a href="#historia" className="hover:text-wine">Historia</a>
+            <a href="#producto" className="hover:text-wine">Productos</a><a href="#materiales" className="hover:text-wine">Materiales</a><a href="#historia" className="hover:text-wine">Historia</a>
           </nav>
           <div className="flex justify-end gap-2">
             <Button asChild variant="luxuryOutline" className="hidden sm:inline-flex"><a href={whatsappUrl(generalQuoteMessage)} target="_blank" rel="noreferrer">Cotizar</a></Button>
@@ -85,42 +76,41 @@ function Index() {
         <img src={productAsset.url} alt="Portabotellas Vitelia Distressed Brown, vista frontal" className="mx-auto h-[350px] w-full object-contain lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[52%]" fetchPriority="high" />
         <div className="relative mx-auto max-w-7xl px-5 pb-12 sm:px-8 lg:flex lg:min-h-[620px] lg:items-center lg:py-16">
           <div className="max-w-lg lg:max-w-[48%]">
-            <p className="text-[10px] font-semibold uppercase text-gold">Portabotellas de piel · Querétaro</p>
+            <p className="text-[10px] font-semibold uppercase text-gold">Colección de portabotellas · Querétaro</p>
             <h1 className="mt-5 text-5xl font-bold leading-tight text-primary sm:text-7xl">Vitelia</h1>
             <p className="mt-4 font-display text-2xl italic text-wine sm:text-3xl">Una pieza, muchas historias.</p>
-            <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground">Piel con carácter para acompañar una botella especial. Una pieza artesanal que convierte cada brindis en un regalo inolvidable.</p>
+            <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground">Bolsas de cuero para acompañar el vino y los destilados. Cuatro modelos para llevar una botella especial o compartir un brindis.</p>
             <div className="mt-8 flex flex-col gap-3 sm:items-start">
-              <Button asChild variant="luxury" size="xl"><a href={whatsappUrl(quoteMessage(1, selected.name))} target="_blank" rel="noreferrer">Cotizar por WhatsApp <ChevronRight /></a></Button>
-              <Button asChild variant="luxuryOutline" size="xl"><a href="#producto">Descubrir la pieza</a></Button>
+              <Button asChild variant="luxury" size="xl"><a href={whatsappUrl(generalQuoteMessage)} target="_blank" rel="noreferrer">Cotizar por WhatsApp <ChevronRight /></a></Button>
+              <Button asChild variant="luxuryOutline" size="xl"><a href="#producto">Descubrir nuestros productos</a></Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="producto" className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.08fr_.92fr] lg:gap-20 lg:py-36">
+      <ProductCollection onAdd={addToCart} />
+
+      <section id="pieza-original" className="mx-auto grid max-w-7xl items-center gap-12 border-t border-border px-5 py-20 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <ProductGallery />
-        <div className="flex flex-col justify-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-wine">Colección esencial 01</p>
-          <h2 className="mt-4 text-5xl font-bold leading-none sm:text-6xl">Portabotellas Vitelia</h2>
-          <p className="mt-6 text-sm leading-7 text-muted-foreground">Cortado y ensamblado para sostener la botella con firmeza, revelar su etiqueta y llevarla con naturalidad. El logotipo Vitelia completa una pieza creada para regalar y conservar.</p>
-          <div className="mt-7 flex items-end justify-between border-y border-border py-5"><div><p className="font-display text-3xl font-bold">Precio a cotizar</p><p className="mt-1 text-[10px] text-muted-foreground">Te compartimos el precio y el envío por WhatsApp.</p></div><div className="hidden items-center gap-1 text-[10px] font-semibold uppercase text-primary sm:flex"><Check size={14} /> Disponible</div></div>
-          <div className="mt-7 flex items-center gap-4 border-b border-border pb-6"><span className="h-8 w-8 shrink-0 rounded-full bg-leather-distressed"/><div><p className="text-xs font-semibold uppercase">Distressed Brown</p><p className="mt-1 text-xs text-muted-foreground">Original · cálido y rústico</p></div></div>
-          <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-[auto_minmax(0,1fr)]"><div className="grid h-12 w-fit grid-cols-[40px_36px_40px] items-center border border-border"><Button variant="ghost" size="icon" onClick={() => setQuantity(Math.max(1, quantity - 1))} aria-label="Restar cantidad"><Minus /></Button><span className="text-center text-sm font-semibold">{quantity}</span><Button variant="ghost" size="icon" onClick={() => setQuantity(quantity + 1)} aria-label="Sumar cantidad"><Plus /></Button></div><Button variant="luxury" size="xl" onClick={() => addToCart(false)}><ShoppingBag /> Agregar al carrito</Button></div>
-          <Button asChild variant="luxuryOutline" size="xl" className="mt-3 w-full border-wine text-wine hover:bg-wine hover:text-primary-foreground"><a href={whatsappUrl(purchaseMessage)} target="_blank" rel="noreferrer">Cotizar ahora por WhatsApp</a></Button>
-          <p className="mt-4 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[0.1em] text-muted-foreground"><ShieldCheck size={14} /> Atención personal · Envío rastreable</p>
-        </div>
+        <div><p className="text-xs font-semibold uppercase text-wine">Una mirada al detalle</p><h2 className="mt-4 text-4xl leading-tight sm:text-5xl">La pieza original</h2><p className="mt-6 text-sm leading-7 text-muted-foreground">Explora las vistas del portabotellas Vitelia en acabado Distressed Brown.</p><Button asChild variant="luxuryOutline" className="mt-7"><a href={whatsappUrl("Hola Vitelia, quisiera información sobre la pieza original Distressed Brown.")} target="_blank" rel="noreferrer">Consultar por WhatsApp <ChevronRight /></a></Button></div>
       </section>
 
-      <ProductStory contactUrl={whatsappUrl(quoteMessage(1, selected.name))} />
+      <ProductStory contactUrl={whatsappUrl(generalQuoteMessage)} />
 
-      <footer className="bg-primary text-primary-foreground"><div className="mx-auto max-w-7xl px-5 py-14 sm:px-8"><div className="grid gap-10 border-b border-primary-foreground/20 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]"><div><BrandMark inverse /><p className="mt-5 max-w-sm text-sm leading-6 text-primary-foreground/65">Diseño en piel para las historias que empiezan alrededor de una botella.</p></div><div><p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-gold">Explora</p><div className="mt-5 flex flex-col gap-3 text-sm"><a href="#producto">Producto</a><a href="#materiales">Materiales</a><a href="#ocasiones">Ocasiones</a><a href="#historia">Nuestra historia</a></div></div><div><p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-gold">Información</p><div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/75"><span>Envíos a todo México</span><span>Aviso de privacidad</span><span>Términos y condiciones</span></div></div></div><div className="flex flex-col gap-2 pt-6 text-[10px] uppercase tracking-[0.13em] text-primary-foreground/50 sm:flex-row sm:justify-between"><span>© 2026 Vitelia</span><span>Querétaro, México</span></div></div></footer>
+      <footer className="bg-primary text-primary-foreground"><div className="mx-auto max-w-7xl px-5 py-14 sm:px-8"><div className="grid gap-10 border-b border-primary-foreground/20 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]"><div><BrandMark inverse /><p className="mt-5 max-w-sm text-sm leading-6 text-primary-foreground/65">Diseño en piel para las historias que empiezan alrededor de una botella.</p></div><div><p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-gold">Explora</p><div className="mt-5 flex flex-col gap-3 text-sm"><a href="#producto">Productos</a><a href="#materiales">Materiales</a><a href="#ocasiones">Ocasiones</a><a href="#historia">Nuestra historia</a></div></div><div><p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-gold">Información</p><div className="mt-5 flex flex-col gap-3 text-sm text-primary-foreground/75"><span>Envíos a todo México</span><span>Aviso de privacidad</span><span>Términos y condiciones</span></div></div></div><div className="flex flex-col gap-2 pt-6 text-[10px] uppercase tracking-[0.13em] text-primary-foreground/50 sm:flex-row sm:justify-between"><span>© 2026 Vitelia</span><span>Querétaro, México</span></div></div></footer>
 
       <Button asChild variant="luxury" size="icon" className="fixed bottom-5 right-5 z-40 h-14 w-14 rounded-full bg-whatsapp text-primary-foreground shadow-xl hover:bg-whatsapp/90" aria-label="Hablar con Vitelia por WhatsApp"><a href={whatsappUrl("Hola Vitelia, me interesa conocer más sobre los portabotellas VITELIA.")} target="_blank" rel="noreferrer"><span className="text-xl font-bold">W</span></a></Button>
     </main>
   );
 }
 
-function CartPanel({ cart, changeLine }: { cart: CartLine[]; changeLine: (id: Variant["id"], amount: number) => void }) {
-  const cartMessage = cartQuoteMessage(cart.map((line) => ({ name: line.variant.name, quantity: line.quantity })));
-  return <SheetContent className="flex w-[92vw] flex-col border-l border-border p-0 sm:max-w-md"><SheetHeader className="border-b border-border px-6 py-6 text-left"><SheetTitle className="font-display text-3xl font-bold">Tu selección</SheetTitle><SheetDescription>Te compartimos precio y envío por WhatsApp</SheetDescription></SheetHeader>{cart.length===0?<div className="flex flex-1 flex-col items-center justify-center px-8 text-center"><ShoppingBag className="mb-5 text-gold" size={38}/><p className="font-display text-2xl font-bold">Tu carrito está vacío</p><p className="mt-2 text-sm text-muted-foreground">Añade tu portabotellas para comenzar.</p></div>:<><div className="flex-1 overflow-y-auto px-6 py-6">{cart.map((line)=><div key={line.variant.id} className="grid grid-cols-[70px_1fr_auto] gap-4 border-b border-border py-5"><img src={productAsset.url} alt="" className="h-24 w-[70px] bg-catalog object-contain"/><div><p className="text-xs font-semibold">{line.variant.name}</p><p className="mt-1 text-xs text-muted-foreground">Cantidad</p><div className="mt-4 flex items-center gap-3"><Button variant="outline" size="icon" className="h-7 w-7" onClick={()=>changeLine(line.variant.id,-1)}><Minus size={12}/></Button><span className="text-xs font-semibold">{line.quantity}</span><Button variant="outline" size="icon" className="h-7 w-7" onClick={()=>changeLine(line.variant.id,1)}><Plus size={12}/></Button></div></div><Button variant="ghost" size="icon" onClick={()=>changeLine(line.variant.id,-line.quantity)} aria-label={`Eliminar ${line.variant.name}`}><X size={15}/></Button></div>)}</div><div className="border-t border-border bg-paper px-6 py-6"><p className="text-[10px] text-muted-foreground">El precio final y el envío se confirmarán por WhatsApp.</p><Button asChild variant="luxury" size="xl" className="mt-5 w-full"><a href={whatsappUrl(cartMessage)} target="_blank" rel="noreferrer">Solicitar cotización por WhatsApp <ChevronRight/></a></Button></div></>}</SheetContent>;
+function CartPanel({ cart, changeLine }: { cart: CollectionCartLine[]; changeLine: (id: string, amount: number) => void }) {
+  const cartMessage = cartQuoteMessage(cart.map((line) => ({ name: selectionName(line), quantity: line.quantity })));
+  return <SheetContent className="flex w-[92vw] flex-col border-l border-border p-0 sm:max-w-md">
+    <SheetHeader className="border-b border-border px-6 py-6 text-left"><SheetTitle className="font-display text-3xl font-bold">Tu selección</SheetTitle><SheetDescription>Te compartimos precio y envío por WhatsApp</SheetDescription></SheetHeader>
+    {cart.length === 0 ? <div className="flex flex-1 flex-col items-center justify-center px-8 text-center"><ShoppingBag className="mb-5 text-gold" size={38} /><p className="font-display text-2xl font-bold">Tu carrito está vacío</p><p className="mt-2 text-sm text-muted-foreground">Añade un portabotellas para comenzar.</p></div> : <>
+      <div className="flex-1 overflow-y-auto px-6 py-6">{cart.map((line) => <div key={line.id} className="grid grid-cols-[70px_minmax(0,1fr)_36px] gap-3 border-b border-border py-5"><img src={line.image} alt={line.name} className="h-24 w-[70px] bg-catalog object-contain" /><div><p className="text-sm font-semibold">{line.name}</p><p className="mt-1 text-xs text-muted-foreground">{line.color ?? "Color por confirmar"}</p><div className="mt-4 flex items-center gap-3"><Button variant="outline" size="icon" className="h-7 w-7" aria-label={`Restar ${line.name}`} onClick={() => changeLine(line.id, -1)}><Minus size={12} /></Button><span className="text-xs font-semibold">{line.quantity}</span><Button variant="outline" size="icon" className="h-7 w-7" aria-label={`Sumar ${line.name}`} onClick={() => changeLine(line.id, 1)}><Plus size={12} /></Button></div></div><Button variant="ghost" size="icon" onClick={() => changeLine(line.id, -line.quantity)} aria-label={`Eliminar ${line.name}`}><X size={15} /></Button></div>)}</div>
+      <div className="border-t border-border bg-paper px-6 py-6"><p className="text-xs leading-6 text-muted-foreground">El color, el precio final y el envío se confirmarán por WhatsApp.</p><Button asChild variant="luxury" className="mt-5 w-full"><a href={whatsappUrl(cartMessage)} target="_blank" rel="noreferrer">Solicitar cotización por WhatsApp <ChevronRight /></a></Button></div>
+    </>}
+  </SheetContent>;
 }
