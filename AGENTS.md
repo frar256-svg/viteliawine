@@ -11,3 +11,4 @@
 
 - Keep the storefront as a single public route with browser-session cart state; purchasing completes through WhatsApp because no payment backend is connected.
 - Keep ordered catalog photography in a dedicated gallery module and separate material, craft, occasion, and gifting sections so image roles never mix.
+- Keep collection models, confirmed color photo groups, and cart identity in a shared collection module; product cards and detail sheets consume it so each model/color quotes separately without duplicating catalog rules.
