@@ -1,6 +1,7 @@
 # Roadmap
 
 - [ ] Presentar los cuatro modelos de los documentos como «Nuestros productos», con tarjetas y selección propia.
+- [ ] Añadir Café como segundo color confirmado, con selector debajo del producto usando las nuevas imágenes e indicaciones.
 - [ ] Incorporar colores reales por modelo; pendiente de confirmar distribución y nombres de los cuatro colores.
 - [ ] Revisar materiales e historia sin publicar datos no confirmados y conservar fotografías y funciones válidas.
 - [ ] Validar selección de modelos, carrito y cotización por WhatsApp en teléfono, tableta y computadora.
