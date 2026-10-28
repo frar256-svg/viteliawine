@@ -1,9 +1,11 @@
 # Roadmap
 
-- [ ] Presentar los cuatro modelos de los documentos como «Nuestros productos», con tarjetas y selección propia.
-- [ ] Incorporar colores reales por modelo; pendiente de confirmar distribución y nombres de los cuatro colores.
-- [ ] Revisar materiales e historia sin publicar datos no confirmados y conservar fotografías y funciones válidas.
-- [ ] Validar selección de modelos, carrito y cotización por WhatsApp en teléfono, tableta y computadora.
+- [x] Presentar cuatro modelos como «Nuestros productos», con el individual antes del doble, tarjetas y selección propia.
+- [x] Añadir Café como segundo color confirmado, con selector debajo del producto y sus cuatro vistas.
+- [ ] Completar los cuatro grupos de colores de cada modelo; faltan nombres y fotografías confirmadas. Las fotos claras recibidas aún no tienen nombre de color confirmado.
+- [x] Revisar materiales e historia sin publicar datos no confirmados y conservar fotografías y funciones válidas.
+- [x] Validar selección de modelos, carrito y cotización por WhatsApp en teléfono, tableta y computadora.
+- [ ] Incorporar medidas, descripción definitiva e historia; pendientes de los datos del cliente.
 
 - [x] Quitar el precio de $200 y dejar solo la cotización por WhatsApp
 

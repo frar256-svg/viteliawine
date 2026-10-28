@@ -96,6 +96,7 @@
   --leather-distressed: oklch(0.48 0.085 52);
   --leather-camel: oklch(0.67 0.105 65);
   --leather-espresso: oklch(0.29 0.045 45);
+  --leather-cafe: oklch(0.43 0.075 58);
   --shadow-button: 0 10px 24px -14px color-mix(in oklab, var(--primary) 55%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -179,6 +180,7 @@
   --color-leather-distressed: var(--leather-distressed);
   --color-leather-camel: var(--leather-camel);
   --color-leather-espresso: var(--leather-espresso);
+  --color-leather-cafe: var(--leather-cafe);
 }
 
 @media (prefers-reduced-motion: reduce) {
