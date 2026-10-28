@@ -1,5 +1,4 @@
 import double from "@/assets/coleccion-modelo-1.png.asset.json";
-import individual from "@/assets/coleccion-modelo-2.png.asset.json";
 import four from "@/assets/coleccion-modelo-3.png.asset.json";
 import spirits from "@/assets/coleccion-modelo-4.png.asset.json";
 import cafe1 from "@/assets/individual-cafe-1.png.asset.json";
@@ -22,7 +21,6 @@ export const collection: CollectionProduct[] = [
     { id: "cafe", name: "Café", swatch: "bg-leather-cafe", images: [cafe3.url, cafe4.url, cafe2.url, cafe1.url] },
   ] },
   { id: "doble", name: "Portabotellas doble", description: "Bolsa de cuero para dos botellas.", image: double.url, plannedColorCount: 4, colors: [] },
-  { id: "porta-botella", name: "Bolsa de vino de cuero", description: "Bolsa de vino de cuero, porta botella.", image: individual.url, plannedColorCount: 4, colors: [] },
   { id: "cuatro", name: "Portabotellas para cuatro", description: "Bolsa de cuero para cuatro botellas de vino.", image: four.url, plannedColorCount: 4, colors: [] },
   { id: "destilados", name: "Portabotellas para destilados", description: "Bolsa de cuero para botellas de destilados, licores, champán y tequila.", image: spirits.url, plannedColorCount: 4, colors: [] },
 ];
