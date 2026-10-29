@@ -17,16 +17,19 @@ test("los cuatro colores del individual tienen cinco fotos cada uno", () => {
     ["individual-cuero", "Negro", 5],
   ]);
 });
-test("cada color del individual abre con su foto frontal y cierra con la del logo", () => {
+test("cada color del individual cierra con su foto de logo y no repite fotos entre colores", () => {
   const individual = collection.find((product) => product.id === "individual-cuero");
   if (!individual) throw new Error("Falta el portabotellas individual");
-  expect(individual.colors.map((color) => [color.name, color.images[0]!.includes("-frente"), color.images[4]!.includes("-logo")])).toEqual([
-    ["Café claro", true, true],
-    ["Café", true, true],
-    ["Verde", true, true],
-    ["Negro", true, true],
+  const todas = individual.colors.flatMap((color) => color.images);
+  expect(individual.colors.map((color) => [color.name, color.images[4]!.includes("-logo")])).toEqual([
+    ["Café claro", true],
+    ["Café", true],
+    ["Verde", true],
+    ["Negro", true],
   ]);
+  expect(new Set(todas).size).toBe(todas.length);
 });
+
 
 test("el carrito conserva los modelos por separado y suma el mismo modelo", () => {
   const double = collection.find((product) => product.id === "doble");
