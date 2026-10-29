@@ -1,10 +1,16 @@
 import double from "@/assets/coleccion-modelo-1.png.asset.json";
 import four from "@/assets/coleccion-modelo-3.png.asset.json";
 import spirits from "@/assets/coleccion-modelo-4.png.asset.json";
-import cafe1 from "@/assets/individual-cafe-1.png.asset.json";
-import cafe2 from "@/assets/individual-cafe-2.png.asset.json";
 import cafe3 from "@/assets/individual-cafe-3.png.asset.json";
 import cafe4 from "@/assets/individual-cafe-4.png.asset.json";
+import cafeIzq from "@/assets/individual-cafe-34-izq.webp.asset.json";
+import cafeDer from "@/assets/individual-cafe-34-der.webp.asset.json";
+import cafeLogo from "@/assets/individual-cafe-logo.png.asset.json";
+import claroFrente from "@/assets/individual-cafe-claro-frente.jpg.asset.json";
+import claroIzq from "@/assets/individual-cafe-claro-34_izq.jpg.asset.json";
+import claroDer from "@/assets/individual-cafe-claro-34_derecha.jpg.asset.json";
+import claroEspalda from "@/assets/individual-cafe-claro-espalda.jpg.asset.json";
+import claroLogo from "@/assets/individual-cafe-claro-logo.png.asset.json";
 
 export type ProductColor = { id: string; name: string; swatch: string; images: string[] };
 export type CollectionProduct = {
@@ -17,8 +23,9 @@ export type CollectionProduct = {
 };
 
 export const collection: CollectionProduct[] = [
-  { id: "individual-cuero", name: "Portabotellas individual de cuero", description: "Bolsa de cuero para una botella.", image: cafe3.url, plannedColorCount: 4, colors: [
-    { id: "cafe", name: "Café", swatch: "bg-leather-cafe", images: [cafe3.url, cafe4.url, cafe2.url, cafe1.url] },
+  { id: "individual-cuero", name: "Portabotellas individual de cuero", description: "Bolsa de cuero para una botella.", image: claroFrente.url, plannedColorCount: 4, colors: [
+    { id: "cafe-claro", name: "Café claro", swatch: "bg-leather-cafe-claro", images: [claroFrente.url, claroIzq.url, claroDer.url, claroEspalda.url, claroLogo.url] },
+    { id: "cafe", name: "Café", swatch: "bg-leather-cafe", images: [cafe3.url, cafeIzq.url, cafeDer.url, cafe4.url, cafeLogo.url] },
   ] },
   { id: "doble", name: "Portabotellas doble", description: "Bolsa de cuero para dos botellas.", image: double.url, plannedColorCount: 4, colors: [] },
   { id: "cuatro", name: "Portabotellas para cuatro", description: "Bolsa de cuero para cuatro botellas de vino.", image: four.url, plannedColorCount: 4, colors: [] },

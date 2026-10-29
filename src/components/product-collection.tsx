@@ -8,7 +8,7 @@ import { cartQuoteMessage, whatsappUrl } from "@/lib/quote";
 function Colors({ product, selected, onSelect }: { product: CollectionProduct; selected?: ProductColor | undefined; onSelect: (color: ProductColor) => void }) {
   return <div className="mt-5 border-t border-border pt-4">
     <p className="text-xs font-semibold">Colores disponibles{product.colors.length ? ` · ${product.colors.length} de ${product.plannedColorCount}` : ""}</p>
-    {product.colors.length ? <div className="mt-3 flex flex-wrap items-center gap-3">{product.colors.map((color) => <Button key={color.id} variant="outline" size="icon" aria-label={`Elegir ${color.name} para ${product.name}`} title={color.name} aria-pressed={selected?.id === color.id} onClick={() => onSelect(color)} className={`h-7 w-7 rounded-full ${color.swatch} ${selected?.id === color.id ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""}`} />)}{selected && <span className="text-xs text-muted-foreground">{selected.name}</span>}</div> : <p className="mt-2 text-xs text-muted-foreground">Consulta los colores por WhatsApp.</p>}
+    {product.colors.length ? <div className="mt-3 flex flex-wrap items-center gap-3">{product.colors.map((color) => <Button key={color.id} variant="outline" size="icon" aria-label={`Elegir ${color.name} para ${product.name}`} title={color.name} aria-pressed={selected?.id === color.id} onClick={() => onSelect(color)} className={`h-8 w-8 rounded-full border-border ${color.swatch} ${selected?.id === color.id ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""}`} />)}{selected && <span className="text-xs text-muted-foreground">{selected.name}</span>}</div> : <p className="mt-2 text-xs text-muted-foreground">Consulta los colores por WhatsApp.</p>}
   </div>;
 }
 
