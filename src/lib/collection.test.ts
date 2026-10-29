@@ -8,9 +8,9 @@ test("el portabotellas individual aparece antes del doble", () => {
 test("cada uno de los cuatro modelos contempla cuatro colores", () => {
   expect(collection.map((product) => product.plannedColorCount)).toEqual([4, 4, 4, 4]);
 });
-test("Café es el segundo color confirmado del individual y tiene cuatro fotos", () => {
+test("Café claro y Café del individual tienen cinco fotos cada uno", () => {
   const colors = collection.flatMap((product) => product.colors.map((color) => [product.id, color.name, color.images.length]));
-  expect(colors).toEqual([["individual-cuero", "Café", 4]]);
+  expect(colors).toEqual([["individual-cuero", "Café claro", 5], ["individual-cuero", "Café", 5]]);
 });
 test("el carrito conserva los modelos por separado y suma el mismo modelo", () => {
   const double = collection.find((product) => product.id === "doble");
