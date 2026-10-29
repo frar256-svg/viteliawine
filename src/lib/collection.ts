@@ -11,6 +11,17 @@ import claroIzq from "@/assets/individual-cafe-claro-34_izq.jpg.asset.json";
 import claroDer from "@/assets/individual-cafe-claro-34_derecha.jpg.asset.json";
 import claroEspalda from "@/assets/individual-cafe-claro-espalda.jpg.asset.json";
 import claroLogo from "@/assets/individual-cafe-claro-logo.png.asset.json";
+import verdeFrente from "@/assets/individual-verde-frente.jpg.asset.json";
+import verdeIzq from "@/assets/individual-verde-34-izq.jpg.asset.json";
+import verdeDer from "@/assets/individual-verde-34-der.jpg.asset.json";
+import verdeEspalda from "@/assets/individual-verde-espalda.jpg.asset.json";
+import verdeLogo from "@/assets/individual-verde-logo.png.asset.json";
+import negroFrente from "@/assets/individual-negro-frente.jpg.asset.json";
+import negroIzq from "@/assets/individual-negro-34-izq.jpg.asset.json";
+import negroDer from "@/assets/individual-negro-34-der.jpg.asset.json";
+import negroEspalda from "@/assets/individual-negro-espalda.jpg.asset.json";
+import negroLogo from "@/assets/individual-negro-logo.png.asset.json";
+
 
 export type ProductColor = { id: string; name: string; swatch: string; images: string[] };
 export type CollectionProduct = {
