@@ -2,7 +2,9 @@
 
 - [x] Presentar cuatro modelos como «Nuestros productos», con el individual antes del doble, tarjetas y selección propia.
 - [x] Añadir Café como segundo color confirmado, con selector debajo del producto y sus cuatro vistas.
-- [ ] Completar los cuatro grupos de colores de cada modelo; faltan nombres y fotografías confirmadas. Las fotos claras recibidas aún no tienen nombre de color confirmado.
+- [x] Completar los cuatro colores del portabotellas individual: Café claro, Café, Verde y Negro, con sus cinco fotografías cada uno.
+- [ ] Completar los colores de los modelos doble, para cuatro y para destilados; faltan nombres y fotografías confirmadas.
+
 - [x] Revisar materiales e historia sin publicar datos no confirmados y conservar fotografías y funciones válidas.
 - [x] Validar selección de modelos, carrito y cotización por WhatsApp en teléfono, tableta y computadora.
 - [ ] Incorporar medidas, descripción definitiva e historia; pendientes de los datos del cliente.
