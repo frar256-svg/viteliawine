@@ -73,7 +73,7 @@ function Index() {
       </header>
 
       <section id="inicio" className="relative overflow-hidden bg-catalog">
-        <img src={productAsset.url} alt="Portabotellas Vitelia Distressed Brown, vista frontal" className="mx-auto h-[350px] w-full object-contain lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[52%]" fetchPriority="high" />
+        <img src={productAsset.url} alt="Portabotellas Vitelia Distressed Brown, vista frontal" className="mx-auto h-[460px] w-full object-contain sm:h-[520px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[52%]" fetchPriority="high" />
         <div className="relative mx-auto max-w-7xl px-5 pb-12 sm:px-8 lg:flex lg:min-h-[620px] lg:items-center lg:py-16">
           <div className="max-w-lg lg:max-w-[48%]">
             <p className="text-[10px] font-semibold uppercase text-gold">Colección de portabotellas · Querétaro</p>
